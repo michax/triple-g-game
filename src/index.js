@@ -1,4 +1,4 @@
-import Shape from "./shape";
+import Shape from './shape';
 
 const shape = new Shape();
 shape.draw();
