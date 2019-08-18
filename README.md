@@ -5,6 +5,8 @@
 Gems, Gems, Gems.
 https://tripleg.netlify.com
 
+[https://docs.google.com/document/d/1YCXyW5VdnKlDVnB0AKVTdeWJR1pZKWzktd3Ie4EiUZM/edit?usp=sharing](Game Docs)
+
 ## Requirements
 
 The commands assume [Yarn](https://yarnpkg.com/en/docs/install) is installed.
