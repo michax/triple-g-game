@@ -1,8 +1,9 @@
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
 }
 
 #game {
-    background-color: #888;
+    border: 1px solid #888;
 }
