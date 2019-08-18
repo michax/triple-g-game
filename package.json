@@ -5,7 +5,7 @@
     "license": "MIT",
     "dependencies": {},
     "scripts": {
-        "serve": "yarn parcel index.html --no-hmr",
+        "serve": "yarn parcel index.html",
         "check-file-size": "yarn node ./scripts/check-file-size.js",
         "delete-dist": "yarn rimraf ./dist",
         "create-dist": "yarn mkdirp ./dist/inlined ./dist/zipped",
@@ -14,7 +14,7 @@
         "build": "yarn run delete-dist && yarn run create-dist && yarn run parcel-build && yarn run inline-build",
         "build-zipped": "yarn run build && yarn node ./scripts/zip-file.js",
         "party": "yarn run build-zipped && yarn run check-file-size",
-        "prettier": "prettier --write \"src/**/*.js\""
+        "format": "prettier --write \"src/**/*.js\""
     },
     "prettier": {
         "trailingComma": "es5",
