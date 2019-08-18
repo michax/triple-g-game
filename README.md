@@ -1,10 +1,9 @@
 # Triple G Game
 
-Gems, Gems, Gems.
-
-https://tripleg.netlify.com
-
 [![Netlify Status](https://api.netlify.com/api/v1/badges/7a70bcb7-1f0c-48f3-aacc-40d43833ed22/deploy-status)](https://app.netlify.com/sites/tripleg/deploys)
+
+Gems, Gems, Gems.
+https://tripleg.netlify.com
 
 ## Requirements
 
