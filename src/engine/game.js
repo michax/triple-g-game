@@ -9,7 +9,7 @@ class Game {
         window.game = game;
 
         this.canvas = new Canvas();
-        this.shape = new Shape(this.canvas);
+        this.shape = new Shape(this.canvas.ctx);
 
         // [Properties]
 

@@ -1,6 +1,6 @@
 class Shape {
-    constructor(canvas) {
-        this.c = canvas.ctx;
+    constructor(ctx) {
+        this.c = ctx;
     }
 
     drawBoxFill(x, y, width, height, fillStyle) {
@@ -41,6 +41,7 @@ class Shape {
         this.c.fillStyle = 'rgba(0, 50, 200, 0.5)';
         this.c.fillRect(130, 10, 50, 50);
 
+        this.c.strokeStyle = 'rgba(50, 0, 200, 0.5)';
         this.c.beginPath();
         this.c.arc(130, 10, 50, 0, Math.PI / 2);
         this.c.stroke();

@@ -1,7 +1,7 @@
 import Game from './engine/game';
 import Scene from './engine/scene';
-import DebugDrawingEntity from './game/entities/debugDrawingEntity';
 import PlayerEntity from './game/entities/playerEntity';
+import DebugDrawingEntity from './game/entities/debugDrawingEntity';
 
 const game = new Game();
 window.$game = game;

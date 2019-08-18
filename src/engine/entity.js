@@ -1,13 +1,13 @@
 var uniqueId = 0;
 
 class Entity {
-    constructor(id) {
+    constructor(id = null) {
         this.game = window.$game;
         this.canvas = this.game.canvas;
         this.shape = this.game.shape;
 
-        if (typeof id === 'undefined' || id === null) {
-            this.id = `guid_${uniqueId++}`;
+        if (id === null) {
+            this.id = `g_${uniqueId++}`;
         } else {
             this.id = id;
         }
