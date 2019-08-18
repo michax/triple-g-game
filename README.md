@@ -1,6 +1,7 @@
 # Triple G Game
 
 Gems, Gems, Gems.
+https://tripleg.netlify.com
 
 ## Requirements
 
