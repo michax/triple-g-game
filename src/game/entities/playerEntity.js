@@ -16,10 +16,8 @@ class PlayerEntity extends Entity {
 
         this.pull = 0.08;
 
-        this.canvas.element.addEventListener(
-            'mousemove',
-            this.onMouseMove.bind(this)
-        );
+        this.onMouseMove = this.onMouseMove.bind(this);
+        this.canvas.element.addEventListener('mousemove', this.onMouseMove);
     }
 
     onMouseMove(ev) {
@@ -37,7 +35,7 @@ class PlayerEntity extends Entity {
         const lerpX = Math.lerp(this.x, this.mouseX, this.pull);
         const lerpY = Math.lerp(this.y, this.mouseY, this.pull);
 
-        this.shape.drawCircleFill(lerpX, lerpY, 50, 'rgb(200, 0, 0)');
+        this.canvas.drawCircleFill(lerpX, lerpY, 50, 'rgb(200, 0, 0)');
 
         this.x = lerpX;
         this.y = lerpY;

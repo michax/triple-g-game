@@ -4,7 +4,6 @@ import PlayerEntity from './game/entities/playerEntity';
 import DebugDrawingEntity from './game/entities/debugDrawingEntity';
 
 const game = new Game();
-window.$game = game;
 
 // [Setup Scene]
 const scene = new Scene();

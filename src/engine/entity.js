@@ -4,7 +4,6 @@ class Entity {
     constructor(id = null) {
         this.game = window.$game;
         this.canvas = this.game.canvas;
-        this.shape = this.game.shape;
 
         if (id === null) {
             this.id = `g_${uniqueId++}`;

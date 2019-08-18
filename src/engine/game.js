@@ -1,4 +1,3 @@
-import Shape from './shape';
 import Canvas from './canvas';
 
 export const STATE_RUNNING = 'r';
@@ -6,10 +5,8 @@ export const STATE_IDLE = 'i';
 
 class Game {
     constructor() {
-        window.game = game;
-
+        window.$game = this;
         this.canvas = new Canvas();
-        this.shape = new Shape(this.canvas.ctx);
 
         // [Properties]
 

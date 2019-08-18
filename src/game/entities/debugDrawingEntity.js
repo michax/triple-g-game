@@ -3,7 +3,7 @@ import Entity from '../../engine/entity';
 class DebugDrawingEntity extends Entity {
     onUpdate(dt, time) {
         super.onUpdate(dt, time);
-        this.shape.drawTest();
+        this.canvas.drawTest();
     }
 }
 
