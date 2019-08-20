@@ -30,9 +30,9 @@ class PlayerEntity extends Entity {
             this.mouseY > min &&
             this.mouseX < max
         ) {
-            $taskText.print('japan flag created!');
+            $taskText.print('japan flag created!', '#dd0000');
         } else {
-            $taskText.print('task:create japan flag!');
+            $taskText.print('task:create japan flag!', '#000000');
         }
     }
 

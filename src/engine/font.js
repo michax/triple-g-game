@@ -1,5 +1,4 @@
 import Entity from './entity';
-import { timingSafeEqual } from 'crypto';
 
 class Font extends Entity {
     constructor(id) {
@@ -25,7 +24,10 @@ class Font extends Entity {
         this.text = null;
     }
 
-    print(text) {
+    print(text, fillStyle) {
+        if (fillStyle) {
+            this.fillStyle = fillStyle;
+        }
         this.text = text;
     }
 
