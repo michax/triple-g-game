@@ -1,19 +1,57 @@
 class Canvas {
-    constructor() {
+    constructor(scale = 1) {
+        this.scale = scale;
         this.element = document.getElementById('game');
         this.ctx = this.element.getContext('2d');
         this.width = this.element.width;
-        this.heigh = this.element.heigh;
+        this.height = this.element.height;
+        this.ctx.imageSmoothingEnabled = false;
 
         // Clear at the beginning required for HMR support.
         this.clear();
     }
 
     clear() {
+        this.ctx.globalCompositeOperation = 'source-over';
         this.ctx.save();
-        this.ctx.setTransform(1, 0, 0, 1, 0, 0);
         this.ctx.clearRect(0, 0, this.element.width, this.element.height);
-        this.ctx.restore();
+        this.ctx.setTransform(1, 0, 0, 1, 0, 0);
+        this.ctx.scale(this.scale, this.scale);
+    }
+
+    drawFont(
+        image,
+        sx,
+        sy,
+        swidth,
+        sheight,
+        dx,
+        dy,
+        dwidth,
+        dheight,
+        fillColor
+    ) {
+        // draw image
+        this.ctx.drawImage(
+            image,
+            sx,
+            sy,
+            swidth,
+            sheight,
+            dx,
+            dy,
+            dwidth,
+            dheight
+        );
+
+        // set composite mode
+        this.ctx.globalCompositeOperation = 'source-in';
+
+        this.ctx.fillStyle = fillColor;
+        this.ctx.fillRect(0, 0, this.width, this.height);
+
+        // fill background in canvas itself
+        this.ctx.globalCompositeOperation = 'destination-over';
     }
 
     drawBoxFill(x, y, width, height, fillStyle) {

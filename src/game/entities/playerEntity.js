@@ -1,12 +1,9 @@
 import Entity from '../../engine/entity';
-import * as Math from '../../engine/math';
-
-function lerp(start, end, amt) {
-    return (1 - amt) * start + amt * end;
-}
+import * as GameMath from '../../engine/math';
 
 class PlayerEntity extends Entity {
     onAdded(scene) {
+        this.imgCircle = document.getElementById('r-circle');
         super.onAdded(scene);
 
         this.mouseX = 0;
@@ -21,8 +18,22 @@ class PlayerEntity extends Entity {
     }
 
     onMouseMove(ev) {
-        this.mouseX = ev.clientX;
-        this.mouseY = ev.clientY;
+        this.mouseX = ev.offsetX;
+        this.mouseY = ev.offsetY;
+
+        const min = 230;
+        const max = 290;
+
+        if (
+            this.mouseX > min &&
+            this.mouseX < max &&
+            this.mouseY > min &&
+            this.mouseX < max
+        ) {
+            $taskText.print('japan flag created!');
+        } else {
+            $taskText.print('task:create japan flag!');
+        }
     }
 
     onRemoved(scene) {
@@ -32,10 +43,30 @@ class PlayerEntity extends Entity {
     onUpdate(dt, time) {
         super.onUpdate(dt, time);
 
-        const lerpX = Math.lerp(this.x, this.mouseX, this.pull);
-        const lerpY = Math.lerp(this.y, this.mouseY, this.pull);
+        const lerpX = GameMath.lerp(
+            this.x,
+            this.mouseX / this.game.scale,
+            this.pull
+        );
+        const lerpY = GameMath.lerp(
+            this.y,
+            this.mouseY / this.game.scale,
+            this.pull
+        );
 
-        this.canvas.drawCircleFill(lerpX, lerpY, 50, 'rgb(200, 0, 0)');
+        this.scale = 2;
+
+        this.canvas.ctx.drawImage(
+            this.imgCircle,
+            0,
+            0,
+            this.imgCircle.width,
+            this.imgCircle.height,
+            lerpX - (this.imgCircle.width / 2) * this.scale,
+            lerpY - (this.imgCircle.height / 2) * this.scale,
+            this.imgCircle.width * this.scale,
+            this.imgCircle.height * this.scale
+        );
 
         this.x = lerpX;
         this.y = lerpY;

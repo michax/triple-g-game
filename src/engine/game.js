@@ -5,8 +5,9 @@ export const STATE_IDLE = 'i';
 
 class Game {
     constructor() {
+        this.scale = 4;
         window.$game = this;
-        this.canvas = new Canvas();
+        this.canvas = new Canvas(this.scale);
 
         // [Properties]
 
